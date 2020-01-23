@@ -18,3 +18,21 @@ export const getGitData = newUser => dispatch => {
       .catch(err => console.log(err));
   }, 1000);
 };
+
+// for both kanye and trump
+export const getQuote = () => dispatch => {
+  dispatch({ type: LOADING });
+
+  setTimeout(() => {
+    axios
+      .all([
+        axios.get("https://api.tronalddump.io/random/quote"),
+        axios.get("https://api.kanye.rest/")
+      ])
+      .then(responseArr => {
+        dispatch({ type: GET_TRUMP, payload: responseArr[0].data.value });
+        dispatch({ type: GET_KANYE, payload: responseArr[1].data.quote });
+      })
+      .catch(errArr => console.log(errArr));
+  }, 1000);
+};

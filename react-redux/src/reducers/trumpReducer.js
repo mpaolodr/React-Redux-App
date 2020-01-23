@@ -12,7 +12,7 @@ export const trumpReducer = (state = initialState, action) => {
     case GET_TRUMP:
       return {
         ...state,
-        meme: action.payload,
+        quote: action.payload,
         isLoading: false
       };
 
