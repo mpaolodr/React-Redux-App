@@ -4,7 +4,7 @@ import React from "react";
 import "./App.scss";
 
 // components
-import GitApi from "./components/gitComponent";
+import GitApi from "./components/gitComponent/GitApi";
 
 const App = () => {
   return (
