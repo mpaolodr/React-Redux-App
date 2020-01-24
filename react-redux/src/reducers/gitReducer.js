@@ -1,9 +1,9 @@
 // import actions
-import { GET_GIT_DATA, LOADING } from "../actions";
+import { GET_GIT_DATA, FETCHING } from "../actions";
 
 // initialState
 const initialState = {
-  isLoading: false,
+  isFetching: false,
   user: {
     login: "mpaolodr",
     id: 53581264,
@@ -47,14 +47,14 @@ export const gitReducer = (state = initialState, action) => {
     case GET_GIT_DATA:
       return {
         ...state,
-        isLoading: false,
+        isFetching: false,
         user: action.payload
       };
 
-    case LOADING:
+    case FETCHING:
       return {
         ...state,
-        isLoading: true
+        isFetching: true
       };
     // default case
     default:

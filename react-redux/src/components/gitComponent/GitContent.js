@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import Loader from "../Loader";
+
 const GitContent = props => {
   return (
     <div className="git-content">
-      {props.isLoading ? (
-        <h2>Loading</h2>
+      {props.isFetching ? (
+        <Loader />
       ) : (
         <div>
           <figure className="user-img-container">
@@ -24,7 +26,7 @@ const GitContent = props => {
 const mapStateToProps = state => {
   return {
     user: state.gitReducer.user,
-    isLoading: state.gitReducer.isLoading
+    isFetching: state.gitReducer.isFetching
   };
 };
 
